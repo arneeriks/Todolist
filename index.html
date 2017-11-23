@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="todolist" ng-controller="mainController as vm">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Style/main.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="Scripts/mainController.js"></script>
+
+    <meta charset="UTF-8">
+    <title>To do list</title>
+</head>
+<body>
+<div class="container">
+    <h1>To do list</h1>
+    <p>Choose a person to see their to do list</p>
+
+    <div>
+        <a class="btn btn-primary newPersonBtn" ng-click="vm.newPerson()">Add new person</a>
+    </div>
+    <table class="table table-hover">
+        <tr >
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+        </tr>
+        <tr ng-repeat="person in vm.persons" ng-click="vm.goToTaskList()">
+            <td>{{person.name}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.mobile}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

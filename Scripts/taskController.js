@@ -10,6 +10,11 @@ angular.module('taskCtrl', [])
         console.log("taskCtrl");
 
         vm.newTask = newTask;
+        vm.goBack = goBack;
+
+        function goBack () {
+            window.location.href = "/index.html";
+        }
 
         function newTask () {
             window.location.href = "/Views/newDo.html";

@@ -4,11 +4,20 @@
 
 
 angular.module('todolist', [])
-    .controller('mainController', [function() {
+    .controller('mainController', [function(personService) {
         var vm = this;
 
         vm.newPerson = newPerson;
         vm.goToTaskList = goToTaskList;
+        vm.testServer = testServer;
+
+        personService.getPersons().then(function (resp) {
+             console.log(resp);
+        });
+
+        function testServer () {
+            personService.getPersons();
+        }
 
         function goToTaskList () {
             window.location.href = "Views/taskList.html";
@@ -19,8 +28,8 @@ angular.module('todolist', [])
         }
         vm.persons = [
             {name: 'Arne Eriksen',
-            email: "arneeriks@gmail.com",
-            mobile: "92032623"},
+            email: "arne@eriksen.no",
+            mobile: "98765432"},
             {name: 'Per Persen',
             email: "per@persen.no",
             mobile: "81549300"},

@@ -6,6 +6,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
     <script src="Scripts/mainController.js"></script>
+    <script src="Scripts/services/personService.js"></script>
 
     <meta charset="UTF-8">
     <title>To do list</title>
@@ -17,6 +18,9 @@
 
     <div>
         <a class="btn btn-primary newPersonBtn" ng-click="vm.newPerson()">Add new person</a>
+    </div>
+    <div>
+        <a class="btn btn-primary newPersonBtn" ng-click="vm.testServer()">Test server</a>
     </div>
     <table class="table table-hover">
         <tr >
